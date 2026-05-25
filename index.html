@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Angelic Reiki Training - Celestial Poster | Green Pastel</title>
+    <!-- FONTS: using Cormorant Garamond (the elegant serif font from "Celestial training for your soul") for ALL textual content -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #bfdbc6;  /* fallback pastel green */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            font-family: 'Cormorant Garamond', serif; /* universal font family */
+        }
+
+        /* FULL IMAGE BACKGROUND (pastel green subtle bokeh/nature texture) 
+           using a data:image SVG to ensure pastel green + soft organic feel.
+           You can replace the background-image URL later with any full image.
+        */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%"><defs><radialGradient id="softGreen" cx="40%" cy="30%" r="80%"><stop offset="0%" stop-color="#e2f3e4"/><stop offset="60%" stop-color="#c8e0cd"/><stop offset="100%" stop-color="#aacfae"/></radialGradient><filter id="softBlur"><feGaussianBlur in="SourceGraphic" stdDeviation="40"/></filter></defs><rect width="100%" height="100%" fill="url(%23softGreen)"/><circle cx="20%" cy="20%" r="280" fill="#d4ebd4" opacity="0.4" filter="url(%23softBlur)"/><circle cx="85%" cy="75%" r="340" fill="#c0e0c0" opacity="0.35" filter="url(%23softBlur)"/><circle cx="60%" cy="15%" r="200" fill="#b8dab8" opacity="0.3" filter="url(%23softBlur)"/><path d="M0 600 L1200 450 L1200 800 L0 800 Z" fill="#bcddae" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.95;
+            z-index: -2;
+        }
+        /* additional subtle overlay to keep readability */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(225, 245, 220, 0.25);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* poster card - slightly transparent and soft pastel green-white background */
+        .poster {
+            max-width: 950px;
+            width: 100%;
+            background: rgba(250, 255, 245, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 2.5rem;
+            box-shadow: 0 30px 40px -20px rgba(50, 60, 30, 0.35), 0 0 0 1px rgba(180, 210, 150, 0.5);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .poster-inner {
+            padding: 2.2rem 2.2rem 2.5rem;
+        }
+
+        /* celestial badge - keeps elegant style, no emojis */
+        .celestial-badge {
+            text-align: center;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: #5f7e5a;
+            font-family: 'Cormorant Garamond', serif;
+            border-top: 1px solid #cce3c4;
+            border-bottom: 1px solid #cce3c4;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 1rem;
+            padding: 0.4rem 1.4rem;
+            background: rgba(235, 248, 225, 0.6);
+        }
+
+        .main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 3rem;
+            text-align: center;
+            color: #2c4a2e;
+            margin: 0.6rem 0 0.3rem;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #517a49;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px dashed #cfe2c4;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            font-style: italic;
+        }
+        .subhead-wrapper {
+            text-align: center;
+        }
+
+        /* image gallery with placeholders & nightcafe prompts, no emojis */
+        .image-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.3rem;
+            margin: 2.2rem 0 2rem;
+            justify-content: center;
+        }
+
+        .img-card {
+            flex: 1;
+            min-width: 170px;
+            background: #fefef7;
+            border-radius: 1.8rem;
+            box-shadow: 0 8px 18px rgba(80, 100, 60, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            border: 1px solid #cfe3c2;
+        }
+        .img-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .placeholder-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #dcf0d2;
+            background-image: radial-gradient(circle at 30% 40%, #c7e2ba 2%, transparent 2.5%);
+            background-size: 18px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #3e6940;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+        .placeholder-img span {
+            background: rgba(245, 255, 235, 0.85);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(3px);
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.3px;
+        }
+
+        .ai-prompt {
+            padding: 0.9rem 0.9rem 1rem;
+            background: #fafff5;
+            border-top: 1px solid #e0f0d6;
+        }
+        .ai-prompt p {
+            font-size: 0.73rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            color: #3c5e34;
+            background: #f2faea;
+            padding: 6px 10px;
+            border-radius: 24px;
+            line-height: 1.35;
+            margin-bottom: 5px;
+            font-style: normal;
+        }
+        .prompt-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: #698a5e;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* courses area - all text with target font */
+        .courses-grid {
+            margin: 2rem 0 1.8rem;
+            background: rgba(240, 250, 234, 0.75);
+            border-radius: 2rem;
+            padding: 1.6rem 2rem;
+            backdrop-filter: blur(2px);
+            box-shadow: inset 0 0 0 1px #e2f0da, 0 6px 14px -6px rgba(70, 90, 50, 0.15);
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #cfe0c2;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .course-item:last-child {
+            border-bottom: none;
+        }
+
+        .course-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #2b4a2a;
+            letter-spacing: -0.2px;
+        }
+        .course-price {
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            color: #6f8f60;
+        }
+
+        .location {
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 1rem 0 0.6rem;
+            color: #4d7042;
+            font-family: 'Cormorant Garamond', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .postcode {
+            background: #e2f0d6;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Tagline exactly "Celestial training for your soul." in the same elegant font */
+        .tagline {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: #517a44;
+            margin: 1rem 0 0.8rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .date-tba {
+            background: #daeacf;
+            display: inline-block;
+            margin: 0.8rem auto 0.2rem;
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            color: #345c2c;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .date-wrapper {
+            text-align: center;
+        }
+
+        .footer-note {
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top: 2rem;
+            color: #6f8e5f;
+            border-top: 1px solid #cde0c0;
+            padding-top: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        /* adjust responsiveness */
+        @media (max-width: 680px) {
+            .poster-inner {
+                padding: 1.5rem;
+            }
+            .main-title {
+                font-size: 2.2rem;
+            }
+            .course-name {
+                font-size: 1rem;
+            }
+            .course-price {
+                font-size: 1.25rem;
+            }
+            .tagline {
+                font-size: 1.4rem;
+            }
+            .img-card {
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="poster">
+    <div class="poster-inner">
+        <!-- celestial badge without emojis -->
+        <div style="text-align: center;">
+            <div class="celestial-badge">✦ CELESTIAL SOUL TRAINING ✦</div>
+        </div>
+
+        <div class="main-title">Angelic Reiki<br>Sacred Pathways</div>
+        <div class="subhead-wrapper">
+            <div class="subhead">Transcendental wisdom • Etheric attunements • Healing light</div>
+        </div>
+
+        <!-- PLACEHOLDER IMAGES + NIGHTCAFE AI PROMPTS (no emojis used inside prompts / labels) -->
+        <div class="image-showcase">
+            <!-- Card 1 : Angelic reiki practitioner training -->
+            <div class="img-card">
+                <div class="placeholder-img">
+                    <span>Placeholder Image - Angelic Radiance</span>
+                </div>
+                <div class="ai-prompt">
+                    <span class="prompt-label">NightCafe AI prompt:</span>
+                    <p>"ethereal angelic reiki healing, golden white light descending from celestial realms, gentle hands radiating soft halo, mystical glowing crystals, divine feminine energy, healing temple with stars, dreamy pastel green and gold, fantasy art style, high detail"</p>
+                </div>
+            </div>
+            <!-- Card 2 : Metatron Method and Master Teacher -->
+            <div class="img-card">
+                <div class="placeholder-img">
+                    <span>Placeholder Image - Metatron Geometry</span>
+                </div>
+                <div class="ai-prompt">
+                    <span class="prompt-label">NightCafe AI prompt:</span>
+                    <p>"Archangel Metatron sacred geometry, golden merkaba, master teacher angelic reiki, violet flame transmutation, cosmic blueprint, etheric wings, celestial light language, pastel green aura, magical realism painting"</p>
+                </div>
+            </div>
+            <!-- Card 3 : Soul Midwifery concept -->
+            <div class="img-card">
+                <div class="placeholder-img">
+                    <span>Placeholder Image - Soul Midwifery</span>
+                </div>
+                <div class="ai-prompt">
+                    <span class="prompt-label">NightCafe AI prompt:</span>
+                    <p>"soul midwifery angelic reiki, comforting angel wings surrounding a peaceful soul, transition of spirit, moonlit celestial garden, etheric doula, stardust and roses, soft shimmer, pastel green and ethereal white, ultra detailed fantasy"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses and pricing, font style matches Angelic Reiki content -->
+        <div class="courses-grid">
+            <div class="course-item">
+                <span class="course-name">Angelic Reiki Levels 1 & 2 — Practitioner Training</span>
+                <span class="course-price">£252</span>
+            </div>
+            <div class="course-item">
+                <span class="course-name">Angelic Reiki 3 & 4 — Master Teacher Training</span>
+                <span class="course-price">£450</span>
+            </div>
+            <div class="course-item">
+                <span class="course-name">The Metatron Method — Angelic Reiki</span>
+                <span class="course-price">£250</span>
+            </div>
+            <div class="course-item">
+                <span class="course-name">Soul Midwifery — Angelic Reiki</span>
+                <span class="course-price">£250</span>
+            </div>
+        </div>
+
+        <!-- location: Halifax HX3 7QE no emojis -->
+        <div class="location">
+            <span>Halifax, West Yorkshire</span>
+            <span class="postcode">HX3 7QE</span>
+        </div>
+
+        <!-- main tagline using requested font style (Cormorant Garamond) already set, same as "Celestial training for your soul." -->
+        <div class="tagline">Celestial training for your soul.</div>
+
+        <!-- Date TBA area, clean text no emojis -->
+        <div class="date-wrapper">
+            <div class="date-tba">Date TBA — Enquire for early notification</div>
+        </div>
+
+        <!-- footer reminder about NightCafe images -->
+        <div class="footer-note">
+            Artwork placeholders: replace with your final NightCafe AI generations using the prompts above.<br>
+            Sacred spaces • In-person training in Halifax • angelic attunements & divine guidance
+        </div>
+    </div>
+</div>
+</body>
+</html>
