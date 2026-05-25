@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Angelic Reiki Training - Celestial Poster | Green Pastel</title>
-    <!-- FONTS: using Cormorant Garamond (the elegant serif font from "Celestial training for your soul") for ALL textual content -->
+    <!-- FONTS: Cormorant Garamond used universally (elegant, same as "Celestial training for your soul") -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -20,13 +20,10 @@
             justify-content: center;
             align-items: center;
             padding: 2rem;
-            font-family: 'Cormorant Garamond', serif; /* universal font family */
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        /* FULL IMAGE BACKGROUND (pastel green subtle bokeh/nature texture) 
-           using a data:image SVG to ensure pastel green + soft organic feel.
-           You can replace the background-image URL later with any full image.
-        */
+        /* FULL IMAGE BACKGROUND (pastel green soft bokeh/nature texture - keeps pastel colour scheme) */
         body::before {
             content: "";
             position: fixed;
@@ -41,7 +38,7 @@
             opacity: 0.95;
             z-index: -2;
         }
-        /* additional subtle overlay to keep readability */
+        /* subtle overlay for readability */
         body::after {
             content: "";
             position: fixed;
@@ -54,7 +51,7 @@
             pointer-events: none;
         }
 
-        /* poster card - slightly transparent and soft pastel green-white background */
+        /* poster card - soft pastel green-white background */
         .poster {
             max-width: 950px;
             width: 100%;
@@ -70,7 +67,7 @@
             padding: 2.2rem 2.2rem 2.5rem;
         }
 
-        /* celestial badge - keeps elegant style, no emojis */
+        /* celestial badge - elegant, no emojis */
         .celestial-badge {
             text-align: center;
             letter-spacing: 4px;
@@ -115,7 +112,7 @@
             text-align: center;
         }
 
-        /* image gallery with placeholders & nightcafe prompts, no emojis */
+        /* image showcase - now with actual integrated images from /images/ folder */
         .image-showcase {
             display: flex;
             flex-wrap: wrap;
@@ -138,31 +135,13 @@
             transform: translateY(-6px);
         }
 
-        .placeholder-img {
+        /* actual image styling */
+        .image-display {
             width: 100%;
             aspect-ratio: 1 / 1;
-            background: #dcf0d2;
-            background-image: radial-gradient(circle at 30% 40%, #c7e2ba 2%, transparent 2.5%);
-            background-size: 18px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #3e6940;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-        }
-        .placeholder-img span {
-            background: rgba(245, 255, 235, 0.85);
-            padding: 0.35rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            backdrop-filter: blur(3px);
-            font-family: 'Cormorant Garamond', serif;
-            letter-spacing: 0.3px;
+            object-fit: cover;
+            display: block;
+            background: #dcf0d2; /* fallback while loading */
         }
 
         .ai-prompt {
@@ -193,7 +172,7 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* courses area - all text with target font */
+        /* courses area - same refined font */
         .courses-grid {
             margin: 2rem 0 1.8rem;
             background: rgba(240, 250, 234, 0.75);
@@ -251,7 +230,7 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Tagline exactly "Celestial training for your soul." in the same elegant font */
+        /* Tagline - Celestial training for your soul - main font */
         .tagline {
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
@@ -291,7 +270,7 @@
             font-weight: 500;
         }
 
-        /* adjust responsiveness */
+        /* responsiveness */
         @media (max-width: 680px) {
             .poster-inner {
                 padding: 1.5rem;
@@ -317,7 +296,7 @@
 <body>
 <div class="poster">
     <div class="poster-inner">
-        <!-- celestial badge without emojis -->
+        <!-- celestial badge (no emojis) -->
         <div style="text-align: center;">
             <div class="celestial-badge">✦ CELESTIAL SOUL TRAINING ✦</div>
         </div>
@@ -327,33 +306,28 @@
             <div class="subhead">Transcendental wisdom • Etheric attunements • Healing light</div>
         </div>
 
-        <!-- PLACEHOLDER IMAGES + NIGHTCAFE AI PROMPTS (no emojis used inside prompts / labels) -->
+        <!-- IMAGES SECTION: integrated with the exact filenames from your "images" folder 
+             (angelic-reiki-practitioner.jpg, metatron-method-angelic-reiki.jpg, soul-midwifery-angelic-reiki.jpg) -->
         <div class="image-showcase">
-            <!-- Card 1 : Angelic reiki practitioner training -->
+            <!-- Card 1: Practitioner Training (Angelic Reiki Levels 1-2) -->
             <div class="img-card">
-                <div class="placeholder-img">
-                    <span>Placeholder Image - Angelic Radiance</span>
-                </div>
+                <img class="image-display" src="images/angelic-reiki-practitioner.jpg" alt="Angelic Reiki Practitioner Training - golden light and celestial healing">
                 <div class="ai-prompt">
                     <span class="prompt-label">NightCafe AI prompt:</span>
                     <p>"ethereal angelic reiki healing, golden white light descending from celestial realms, gentle hands radiating soft halo, mystical glowing crystals, divine feminine energy, healing temple with stars, dreamy pastel green and gold, fantasy art style, high detail"</p>
                 </div>
             </div>
-            <!-- Card 2 : Metatron Method and Master Teacher -->
+            <!-- Card 2: Metatron Method & Master Teacher (Metatron Method Angelic Reiki / Master Training) -->
             <div class="img-card">
-                <div class="placeholder-img">
-                    <span>Placeholder Image - Metatron Geometry</span>
-                </div>
+                <img class="image-display" src="images/metatron-method-angelic-reiki.jpg" alt="The Metatron Method - sacred geometry and violet flame">
                 <div class="ai-prompt">
                     <span class="prompt-label">NightCafe AI prompt:</span>
                     <p>"Archangel Metatron sacred geometry, golden merkaba, master teacher angelic reiki, violet flame transmutation, cosmic blueprint, etheric wings, celestial light language, pastel green aura, magical realism painting"</p>
                 </div>
             </div>
-            <!-- Card 3 : Soul Midwifery concept -->
+            <!-- Card 3: Soul Midwifery (Soul Midwifery Angelic Reiki) -->
             <div class="img-card">
-                <div class="placeholder-img">
-                    <span>Placeholder Image - Soul Midwifery</span>
-                </div>
+                <img class="image-display" src="images/soul-midwifery-angelic-reiki.jpg" alt="Soul Midwifery - angelic transition and celestial garden">
                 <div class="ai-prompt">
                     <span class="prompt-label">NightCafe AI prompt:</span>
                     <p>"soul midwifery angelic reiki, comforting angel wings surrounding a peaceful soul, transition of spirit, moonlit celestial garden, etheric doula, stardust and roses, soft shimmer, pastel green and ethereal white, ultra detailed fantasy"</p>
@@ -361,7 +335,7 @@
             </div>
         </div>
 
-        <!-- Courses and pricing, font style matches Angelic Reiki content -->
+        <!-- Courses & pricing exactly as per original content, using consistent font -->
         <div class="courses-grid">
             <div class="course-item">
                 <span class="course-name">Angelic Reiki Levels 1 & 2 — Practitioner Training</span>
@@ -381,23 +355,22 @@
             </div>
         </div>
 
-        <!-- location: Halifax HX3 7QE no emojis -->
+        <!-- location & postcode (no emojis) -->
         <div class="location">
             <span>Halifax, West Yorkshire</span>
             <span class="postcode">HX3 7QE</span>
         </div>
 
-        <!-- main tagline using requested font style (Cormorant Garamond) already set, same as "Celestial training for your soul." -->
+        <!-- main tagline in your preferred font (already Cormorant Garamond) -->
         <div class="tagline">Celestial training for your soul.</div>
 
-        <!-- Date TBA area, clean text no emojis -->
+        <!-- Date TBA section, clean -->
         <div class="date-wrapper">
             <div class="date-tba">Date TBA — Enquire for early notification</div>
         </div>
 
-        <!-- footer reminder about NightCafe images -->
+        <!-- footer note -->
         <div class="footer-note">
-            Artwork placeholders: replace with your final NightCafe AI generations using the prompts above.<br>
             Sacred spaces • In-person training in Halifax • angelic attunements & divine guidance
         </div>
     </div>
